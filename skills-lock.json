@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "skills": {
+    "migrate-react-spectrum-v3-to-s2": {
+      "source": "react-spectrum.adobe.com",
+      "sourceUrl": "https://react-spectrum.adobe.com",
+      "sourceType": "well-known",
+      "computedHash": "2921d292aed37e8eabfd12d9c2c1d296f41833d3166264df8f78511c78a1b4aa",
+      "wellKnownDigest": "sha256:84fddde5ff2a4eb5944194078a095c52c2497baf566f37e6d39fef1e3690a7e9"
+    },
+    "react-spectrum-s2": {
+      "source": "react-spectrum.adobe.com",
+      "sourceUrl": "https://react-spectrum.adobe.com",
+      "sourceType": "well-known",
+      "computedHash": "6189ff30aa06ceb35c5b57e8abe51ce04b090849e65b7a008888be7439b9533b",
+      "wellKnownDigest": "sha256:c222080f09f98a80f2c22fc6030ba69d8dfd1b719f18c2fdc1a44f93382b5cd8"
+    },
+    "spectrum-audit": {
+      "source": "react-spectrum.adobe.com",
+      "sourceUrl": "https://react-spectrum.adobe.com",
+      "sourceType": "well-known",
+      "computedHash": "529475795a5c49387b215a90e1d4f6f5fa7feaf0f18608cfe36c185fc2155c97",
+      "wellKnownDigest": "sha256:2a4afc0478fc8af3572ffcb210001e3043673bc637de4e8d8a45a5ba2d979995"
+    }
+  }
+}

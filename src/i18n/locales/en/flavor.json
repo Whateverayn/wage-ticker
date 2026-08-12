@@ -1,0 +1,8 @@
+{
+  "status": {
+    "beforeStart": "Not started yet",
+    "working": "On shift",
+    "overtime": "Overtime"
+  },
+  "shareTitle": "Wage Ticker settings"
+}

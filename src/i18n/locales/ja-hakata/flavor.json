@@ -1,0 +1,8 @@
+{
+  "status": {
+    "beforeStart": "まだ始まっとらんよ",
+    "working": "仕事中やけん",
+    "overtime": "残業中たい"
+  },
+  "shareTitle": "勤務カウンターの設定たい"
+}
