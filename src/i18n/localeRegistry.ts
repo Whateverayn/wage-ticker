@@ -13,7 +13,7 @@ export interface LocaleDescriptor {
  * routes any dialect's missing keys back to `ja`.
  */
 export const LOCALES: LocaleDescriptor[] = [
-  { id: 'ja', labelNative: '標準語', s2Locale: 'ja-JP' },
+  { id: 'ja', labelNative: '日本語', s2Locale: 'ja-JP' },
   { id: 'ja-kansai', labelNative: '関西弁', s2Locale: 'ja-JP' },
   { id: 'ja-hakata', labelNative: '博多弁', s2Locale: 'ja-JP' },
   { id: 'ja-tohoku', labelNative: '東北弁', s2Locale: 'ja-JP' },

@@ -5,7 +5,7 @@ import { useServiceWorkerUpdate } from './useServiceWorkerUpdate'
 
 /** No visual output of its own -- just bridges SW update state to a ToastQueue call. */
 export function UpdateToast() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   const { needRefresh, reload, dismiss } = useServiceWorkerUpdate()
 
   useEffect(() => {

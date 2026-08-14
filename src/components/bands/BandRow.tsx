@@ -14,6 +14,7 @@ const narrowField = style({ width: 100 })
 
 export function BandRow({ band }: { band: PremiumBand }) {
   const { t } = useTranslation()
+  const { t: tFlavor } = useTranslation('flavor')
   const updateBand = useAppStore((s) => s.updateBand)
   const removeBand = useAppStore((s) => s.removeBand)
 
@@ -37,8 +38,8 @@ export function BandRow({ band }: { band: PremiumBand }) {
         onChange={(value) => value && updateBand(band.id, { type: value as BandValueType })}
         styles={narrowField}
       >
-        <PickerItem id="percent">{t('setup.bandTypePercent')}</PickerItem>
-        <PickerItem id="fixed">{t('setup.bandTypeFixed')}</PickerItem>
+        <PickerItem id="percent">{tFlavor('setup.bandTypePercent')}</PickerItem>
+        <PickerItem id="fixed">{tFlavor('setup.bandTypeFixed')}</PickerItem>
       </Picker>
       <NumberField
         aria-label={t('setup.bandValueAria')}

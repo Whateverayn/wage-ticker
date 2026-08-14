@@ -9,7 +9,7 @@ const sectionStyle = style({ display: 'flex', flexDirection: 'column', gap: 24 }
 const headingStyle = style({ font: 'title-sm', marginBottom: 4 })
 
 export function ExchangeView({ onScanned }: { onScanned: (payload: ExportPayloadV1) => void }) {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   return (
     <div className={sectionStyle}>
       <div>

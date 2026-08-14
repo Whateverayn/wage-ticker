@@ -14,7 +14,7 @@ const emptyStateStyle = style({
 })
 
 export function DashboardView({ onNavigateToSetup }: { onNavigateToSetup: () => void }) {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   const hasSession = useAppStore((s) => s.session !== null)
   const wakeLockEnabled = useAppStore((s) => s.features.wakeLockEnabled)
 

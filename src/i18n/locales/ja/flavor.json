@@ -1,4 +1,87 @@
 {
+  "tabs": {
+    "dashboard": "ダッシュボード",
+    "setup": "設定",
+    "exchange": "データ",
+    "settings": "その他"
+  },
+  "setup": {
+    "startTime": "勤務開始時刻",
+    "endTime": "勤務終了予定時刻",
+    "wage": "基本時給(円)",
+    "start": "スタート",
+    "advancedTitle": "詳細設定(時間帯割増・固定費)",
+    "bandsHeading": "割増時間帯",
+    "costsHeading": "固定費",
+    "addBand": "+ 時間帯を追加",
+    "addCost": "+ 固定費を追加",
+    "defaultCostLabel": "交通費",
+    "bandTypePercent": "%増し",
+    "bandTypeFixed": "円/時 加算"
+  },
+  "dashboard": {
+    "emptyMessage": "勤務が開始されていません",
+    "goToSetup": "設定へ",
+    "earnedLabel": "現在までに稼いだ金額",
+    "elapsedLabel": "経過時間",
+    "remainingLabel": "残り時間",
+    "overtimeLabel": "残業時間",
+    "reset": "やり直す",
+    "breakdownBase": "時給分",
+    "breakdownBonus": "割増",
+    "breakdownFixed": "固定費",
+    "resetConfirmTitle": "やり直しますか?",
+    "resetConfirmBody": "現在の勤務データが消去されます. この操作は取り消せません."
+  },
+  "exchange": {
+    "textHeading": "テキスト",
+    "qrHeading": "QRコード",
+    "scanHeading": "QRコードを読み取って読み込む",
+    "copy": "コピー",
+    "share": "共有",
+    "load": "読み込む",
+    "copied": "コピーしました",
+    "shared": "共有しました",
+    "loaded": "読み込みました",
+    "errorInvalidJson": "テキストの形式が正しくありません(JSONとして読み取れません)",
+    "errorMissingData": "必要なデータが含まれていません",
+    "noSessionText": "先に勤務を開始すると, 設定をテキストで書き出せます",
+    "noSessionQr": "先に勤務を開始すると, QRコードを作成できます",
+    "textFallbackNote": "保存に失敗する環境向けに, 設定をテキストとして書き出し・読み込みできます.",
+    "textFallbackHint": "共有・コピー機能が使えない環境では, 上のテキストを長押しまたは右クリックで選択してコピーしてください.",
+    "qrHint": "別の端末のカメラで読み取ると, 設定を読み込めます",
+    "qrTooLargeTitle": "QRコードにできません",
+    "qrTooLargeBody": "時間帯・固定費が多いため, QRコードに収まりません. テキストでの書き出しをご利用ください.",
+    "qrWarnTitle": "読み取りにくい場合があります",
+    "qrWarnBody": "データ量が多いため, QRコードの読み取りに失敗しやすくなっています.",
+    "scanStart": "カメラでQRコードを読み取る",
+    "scanStop": "読み取りを終了",
+    "scanDeniedTitle": "カメラを使用できません",
+    "scanDeniedBody": "カメラへのアクセスが許可されていません. テキストでの読み込みをお使いください.",
+    "scanUnsupportedTitle": "カメラが見つかりません",
+    "scanUnsupportedBody": "この端末にはカメラが見つかりませんでした. テキストでの読み込みをお使いください."
+  },
+  "settings": {
+    "wakeLock": "ダッシュボード表示中は画面を常にオンにする",
+    "vibration": "開始・リセット時に振動する",
+    "noOptions": "この端末で利用できる追加設定はありません",
+    "languageLabel": "言語・方言"
+  },
+  "importDialog": {
+    "title": "設定を読み込みますか?",
+    "startLabel": "勤務開始",
+    "endLabel": "終了予定",
+    "wageLabel": "基本時給",
+    "wageUnit": "/時",
+    "bandsCostsLabel": "割増時間帯 {{bands}} 件 / 固定費 {{costs}} 件",
+    "overwriteNotice": "現在の設定は上書きされます.",
+    "cancel": "キャンセル",
+    "confirm": "読み込む"
+  },
+  "update": {
+    "available": "新しいバージョンがあります",
+    "action": "更新"
+  },
   "status": {
     "beforeStart": "まだ勤務開始前です",
     "working": "勤務中",

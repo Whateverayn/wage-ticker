@@ -11,7 +11,18 @@ const safeAreaPadding = css(`
   padding-left: env(safe-area-inset-left);
 `)
 
-const layoutStyle = style({ display: 'flex', flexDirection: 'column', flexGrow: 1, minHeight: 0 })
+// border-box so the safe-area padding is absorbed within this flex item's
+// allocated size rather than adding to it (matters on real notched devices,
+// where the insets are non-zero -- the local repro of the scroll bug turned
+// out to be from body's default margin, but this closes the same class of
+// bug for real safe-area values too).
+const layoutStyle = style({
+  display: 'flex',
+  flexDirection: 'column',
+  flexGrow: 1,
+  minHeight: 0,
+  boxSizing: 'border-box',
+})
 
 /**
  * Layer B of the two-layer safe-area split: the Provider (Layer A) paints a

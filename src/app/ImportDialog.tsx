@@ -15,7 +15,7 @@ interface ImportDialogProps {
 
 /** Always shown before an import overwrites session/bands/costs -- never silent. */
 export function ImportDialog({ payload, onCancel, onImported }: ImportDialogProps) {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   const locale = useAppStore((s) => s.locale)
   const importPayload = useAppStore((s) => s.importPayload)
   const dateLocale = toS2Locale(locale)

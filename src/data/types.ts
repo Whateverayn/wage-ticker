@@ -52,6 +52,14 @@ export interface PersistedAppState {
   locale: LocaleId
   theme: ThemeOverride
   features: FeatureToggles
+  /**
+   * Last-entered Setup form values, saved live on every edit (like bands/
+   * costs) so the form doesn't reset to hardcoded defaults on reload.
+   * Wall-clock 'HH:mm', same representation as PremiumBand times.
+   */
+  draftStartTime: string
+  draftEndTime: string
+  draftWage: number
 }
 
 /**
