@@ -12,6 +12,11 @@ import type {
 } from '../data/types'
 import { generateId } from '../data/uuid'
 
+function dateToHHMM(iso: string): string {
+  const d = new Date(iso)
+  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+}
+
 interface AppStore extends PersistedAppState {
   startSession: (session: WorkSession) => void
   resetSession: () => void
@@ -24,6 +29,9 @@ interface AppStore extends PersistedAppState {
   setLocale: (locale: LocaleId) => void
   setTheme: (theme: ThemeOverride) => void
   setFeatureToggle: (key: keyof FeatureToggles, value: boolean) => void
+  setDraftStartTime: (hhmm: string) => void
+  setDraftEndTime: (hhmm: string) => void
+  setDraftWage: (wage: number) => void
   /** Overwrites session/bands/costs from a confirmed import (text or QR). */
   importPayload: (imported: ImportedSession) => void
 }
@@ -36,6 +44,9 @@ const initialState: PersistedAppState = {
   locale: 'ja',
   theme: 'auto',
   features: { wakeLockEnabled: false, vibrationEnabled: false },
+  draftStartTime: '09:00',
+  draftEndTime: '17:00',
+  draftWage: 1200,
 }
 
 export const useAppStore = create<AppStore>()(
@@ -60,13 +71,26 @@ export const useAppStore = create<AppStore>()(
       setTheme: (theme) => set({ theme }),
       setFeatureToggle: (key, value) => set((s) => ({ features: { ...s.features, [key]: value } })),
 
+      setDraftStartTime: (hhmm) => set({ draftStartTime: hhmm }),
+      setDraftEndTime: (hhmm) => set({ draftEndTime: hhmm }),
+      setDraftWage: (wage) => set({ draftWage: wage }),
+
       importPayload: (imported) =>
-        set({ session: imported.session, bands: imported.bands, costs: imported.costs }),
+        set({
+          session: imported.session,
+          bands: imported.bands,
+          costs: imported.costs,
+          draftStartTime: dateToHHMM(imported.session.startAt),
+          draftEndTime: dateToHHMM(imported.session.endAt),
+          draftWage: imported.session.hourlyWage,
+        }),
     }),
     {
       name: 'wage-ticker/state',
       version: 1,
-      // No migrate() needed yet at version 1. Add one here the day schemaVersion becomes 2.
+      // No migrate() needed: new keys (draftStartTime/draftEndTime/draftWage)
+      // added here get their defaults from initialState via the default
+      // shallow merge for anyone with older persisted data.
     },
   ),
 )

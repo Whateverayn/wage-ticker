@@ -1,4 +1,87 @@
 {
+  "tabs": {
+    "dashboard": "Dashboard",
+    "setup": "Setup",
+    "exchange": "Data",
+    "settings": "More"
+  },
+  "setup": {
+    "startTime": "Shift start time",
+    "endTime": "Scheduled end time",
+    "wage": "Base hourly wage (¥)",
+    "start": "Start",
+    "advancedTitle": "Advanced (premium bands & fixed costs)",
+    "bandsHeading": "Premium time bands",
+    "costsHeading": "Fixed costs",
+    "addBand": "+ Add band",
+    "addCost": "+ Add cost",
+    "defaultCostLabel": "Transportation",
+    "bandTypePercent": "% increase",
+    "bandTypeFixed": "¥/hr increase"
+  },
+  "dashboard": {
+    "emptyMessage": "No shift in progress",
+    "goToSetup": "Go to setup",
+    "earnedLabel": "Earned so far",
+    "elapsedLabel": "Elapsed",
+    "remainingLabel": "Remaining",
+    "overtimeLabel": "Overtime",
+    "reset": "Reset",
+    "breakdownBase": "Base",
+    "breakdownBonus": "Premium",
+    "breakdownFixed": "Fixed costs",
+    "resetConfirmTitle": "Reset?",
+    "resetConfirmBody": "This will clear the current shift's data. This can't be undone."
+  },
+  "exchange": {
+    "textHeading": "Text",
+    "qrHeading": "QR code",
+    "scanHeading": "Scan a QR code to load",
+    "copy": "Copy",
+    "share": "Share",
+    "load": "Load",
+    "copied": "Copied",
+    "shared": "Shared",
+    "loaded": "Loaded",
+    "errorInvalidJson": "That doesn't look like valid JSON.",
+    "errorMissingData": "Required data is missing.",
+    "noSessionText": "Start a shift first to export settings as text",
+    "noSessionQr": "Start a shift first to generate a QR code",
+    "textFallbackNote": "For environments where saving fails, you can export/import settings as text.",
+    "textFallbackHint": "If share/copy isn't available, long-press or right-click the text above to select and copy it.",
+    "qrHint": "Scan with another device's camera to load these settings",
+    "qrTooLargeTitle": "Can't make a QR code",
+    "qrTooLargeBody": "Too many bands/costs to fit in a QR code. Please use text export instead.",
+    "qrWarnTitle": "May be hard to scan",
+    "qrWarnBody": "This QR code holds a lot of data and may be unreliable to scan.",
+    "scanStart": "Scan a QR code with your camera",
+    "scanStop": "Stop scanning",
+    "scanDeniedTitle": "Camera unavailable",
+    "scanDeniedBody": "Camera access wasn't granted. Please use text import instead.",
+    "scanUnsupportedTitle": "No camera found",
+    "scanUnsupportedBody": "No camera was found on this device. Please use text import instead."
+  },
+  "settings": {
+    "wakeLock": "Keep the screen on while the dashboard is open",
+    "vibration": "Vibrate on start/reset",
+    "noOptions": "No additional settings are available on this device",
+    "languageLabel": "Language / dialect"
+  },
+  "importDialog": {
+    "title": "Load these settings?",
+    "startLabel": "Start",
+    "endLabel": "Scheduled end",
+    "wageLabel": "Base wage",
+    "wageUnit": "/hr",
+    "bandsCostsLabel": "{{bands}} premium band(s) / {{costs}} fixed cost(s)",
+    "overwriteNotice": "Your current settings will be overwritten.",
+    "cancel": "Cancel",
+    "confirm": "Load"
+  },
+  "update": {
+    "available": "A new version is available",
+    "action": "Update"
+  },
   "status": {
     "beforeStart": "Not started yet",
     "working": "On shift",

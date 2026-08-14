@@ -7,7 +7,7 @@ import { BandRow } from './BandRow'
 const listStyle = style({ display: 'flex', flexDirection: 'column', gap: 12 })
 
 export function BandList() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   const bands = useAppStore((s) => s.bands)
   const addBand = useAppStore((s) => s.addBand)
 

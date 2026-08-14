@@ -1,8 +1,50 @@
 {
   "status": {
-    "beforeStart": "まだ始まっとらんけん",
+    "beforeStart": "まだ始まっとらんよ",
     "working": "仕事中じゃ",
-    "overtime": "残業中じゃけん"
+    "overtime": "残業中じゃ"
   },
-  "shareTitle": "勤務カウンターの設定じゃ"
+  "shareTitle": "勤務カウンターの設定じゃ",
+  "dashboard": {
+    "emptyMessage": "まだ勤務始まっとらんよ",
+    "reset": "やり直す",
+    "resetConfirmTitle": "ほんまにやり直すん?",
+    "resetConfirmBody": "今の勤務データが消えるけえね. 元には戻せんけえ気ぃつけんさいよ."
+  },
+  "exchange": {
+    "copied": "コピーしたで",
+    "shared": "共有したで",
+    "loaded": "読み込んだで",
+    "errorInvalidJson": "そのテキスト, JSONとして読めんわ",
+    "errorMissingData": "必要なデータが足らんわ",
+    "noSessionText": "先に勤務始めたら, テキストで書き出せるようになるけえ",
+    "noSessionQr": "先に勤務始めたら, QRコード作れるようになるけえ",
+    "textFallbackNote": "保存できん環境のために, 設定をテキストで書き出し・読み込みできるようにしとるんよ.",
+    "textFallbackHint": "共有・コピーが使えん環境じゃったら, 上のテキストを長押しか右クリックで選んでコピーしてや.",
+    "qrHint": "別の端末のカメラで読んだら, 設定を読み込めるけえ",
+    "qrTooLargeTitle": "QRコードにできんわ",
+    "qrTooLargeBody": "時間帯・固定費が多すぎて, QRコードに収まらんのよ. テキストの書き出し使うてや.",
+    "qrWarnTitle": "読み取りにくいかもしれんね",
+    "qrWarnBody": "データ量が多いけえ, QRコードの読み取りに失敗しやすうなっとるんよ.",
+    "scanStart": "カメラでQRコード読む",
+    "scanStop": "読み取りやめる",
+    "scanDeniedTitle": "カメラ使えんわ",
+    "scanDeniedBody": "カメラへのアクセスが許可されとらんのよ. テキストでの読み込み使うてや.",
+    "scanUnsupportedTitle": "カメラが見つからんわ",
+    "scanUnsupportedBody": "この端末にカメラが見つからんかったわ. テキストでの読み込み使うてや."
+  },
+  "settings": {
+    "wakeLock": "ダッシュボード見とる間, 画面ずっと点けとくで",
+    "vibration": "開始・リセットの時に振動させるで"
+  },
+  "importDialog": {
+    "title": "この設定, 読み込んでええ?",
+    "overwriteNotice": "今の設定が上書きされるけえね.",
+    "cancel": "やめとく",
+    "confirm": "読み込む"
+  },
+  "update": {
+    "available": "新しいバージョンあるけえ",
+    "action": "更新する"
+  }
 }

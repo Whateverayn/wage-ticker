@@ -11,7 +11,7 @@ const sectionStyle = style({ display: 'flex', flexDirection: 'column', gap: 16 }
 const noteStyle = style({ font: 'body-xs', color: 'neutral-subdued' })
 
 export function SettingsView() {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation('flavor')
   const locale = useAppStore((s) => s.locale)
   const setLocale = useAppStore((s) => s.setLocale)
   const features = useAppStore((s) => s.features)

@@ -25,9 +25,13 @@ const wrapperStyle = style({
   boxSizing: 'border-box',
 })
 const tabsStyle = style({ width: 'full', flexGrow: 1 })
+// Tabs' own built-in gap between the tab list and its panel is only ~4px;
+// add real breathing room above each panel's content.
+const panelStyle = style({ marginTop: 16 })
 
 export function AppShell() {
   const { t } = useTranslation()
+  const { t: tFlavor } = useTranslation('flavor')
   const hasSession = useAppStore((s) => s.session !== null)
   const [view, setView] = useState<ViewKey>(hasSession ? 'dashboard' : 'setup')
   const [pendingImport, setPendingImport] = useState<ExportPayloadV1 | null>(null)
@@ -58,21 +62,21 @@ export function AppShell() {
         styles={tabsStyle}
       >
         <TabList aria-label={t('tabs.ariaLabel')}>
-          <Tab id="dashboard">{t('tabs.dashboard')}</Tab>
-          <Tab id="setup">{t('tabs.setup')}</Tab>
-          <Tab id="exchange">{t('tabs.exchange')}</Tab>
-          <Tab id="settings">{t('tabs.settings')}</Tab>
+          <Tab id="dashboard">{tFlavor('tabs.dashboard')}</Tab>
+          <Tab id="setup">{tFlavor('tabs.setup')}</Tab>
+          <Tab id="exchange">{tFlavor('tabs.exchange')}</Tab>
+          <Tab id="settings">{tFlavor('tabs.settings')}</Tab>
         </TabList>
-        <TabPanel id="dashboard">
+        <TabPanel id="dashboard" styles={panelStyle}>
           <DashboardView onNavigateToSetup={() => setView('setup')} />
         </TabPanel>
-        <TabPanel id="setup">
+        <TabPanel id="setup" styles={panelStyle}>
           <SetupView onStarted={() => setView('dashboard')} />
         </TabPanel>
-        <TabPanel id="exchange">
+        <TabPanel id="exchange" styles={panelStyle}>
           <ExchangeView onScanned={setPendingImport} />
         </TabPanel>
-        <TabPanel id="settings">
+        <TabPanel id="settings" styles={panelStyle}>
           <SettingsView />
         </TabPanel>
       </Tabs>

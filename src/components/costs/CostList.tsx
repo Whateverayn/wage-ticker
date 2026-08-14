@@ -7,7 +7,7 @@ import { CostRow } from './CostRow'
 const listStyle = style({ display: 'flex', flexDirection: 'column', gap: 12 })
 
 export function CostList() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   const costs = useAppStore((s) => s.costs)
   const addCost = useAppStore((s) => s.addCost)
 

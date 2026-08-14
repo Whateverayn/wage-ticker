@@ -18,7 +18,7 @@ function extractEncodedPayload(scannedText: string): string {
 }
 
 export function QrScanPanel({ onDecoded }: { onDecoded: (payload: ExportPayloadV1) => void }) {
-  const { t } = useTranslation()
+  const { t } = useTranslation('flavor')
   const videoRef = useRef<HTMLVideoElement>(null)
   const scannerRef = useRef<QrScanner | null>(null)
   const [state, setState] = useState<ScanState>('idle')

@@ -18,6 +18,7 @@ const qrImgStyle = style({ borderRadius: 'lg' })
 
 export function QrExportPanel() {
   const { t } = useTranslation()
+  const { t: tFlavor } = useTranslation('flavor')
   const session = useAppStore((s) => s.session)
   const bands = useAppStore((s) => s.bands)
   const costs = useAppStore((s) => s.costs)
@@ -47,25 +48,25 @@ export function QrExportPanel() {
   }, [payload, tooLarge])
 
   if (!session) {
-    return <p className={noteStyle}>{t('exchange.noSessionQr')}</p>
+    return <p className={noteStyle}>{tFlavor('exchange.noSessionQr')}</p>
   }
 
   return (
     <div className={panelStyle}>
       {tooLarge && (
         <InlineAlert variant="negative">
-          <Heading>{t('exchange.qrTooLargeTitle')}</Heading>
-          <Content>{t('exchange.qrTooLargeBody')}</Content>
+          <Heading>{tFlavor('exchange.qrTooLargeTitle')}</Heading>
+          <Content>{tFlavor('exchange.qrTooLargeBody')}</Content>
         </InlineAlert>
       )}
       {!tooLarge && byteSize > SOFT_WARNING_BYTES && (
         <InlineAlert variant="notice">
-          <Heading>{t('exchange.qrWarnTitle')}</Heading>
-          <Content>{t('exchange.qrWarnBody')}</Content>
+          <Heading>{tFlavor('exchange.qrWarnTitle')}</Heading>
+          <Content>{tFlavor('exchange.qrWarnBody')}</Content>
         </InlineAlert>
       )}
       {dataUrl && <img src={dataUrl} alt={t('exchange.qrImageAlt')} width={240} height={240} className={qrImgStyle} />}
-      <p className={noteStyle}>{t('exchange.qrHint')}</p>
+      <p className={noteStyle}>{tFlavor('exchange.qrHint')}</p>
     </div>
   )
 }

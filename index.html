@@ -14,6 +14,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="勤務カウンター" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style>
+      /* The default browser UA stylesheet puts 8px margin on body; left in
+         place, that's exactly enough extra height to force a tiny page
+         scroll on short-content pages once safe-area/layout math is added. */
+      body {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

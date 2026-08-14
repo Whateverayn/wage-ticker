@@ -32,14 +32,14 @@ export function TextExportPanel() {
   const [error, setError] = useState<string | null>(null)
 
   if (!session) {
-    return <p className={noteStyle}>{t('exchange.noSessionText')}</p>
+    return <p className={noteStyle}>{tFlavor('exchange.noSessionText')}</p>
   }
 
   async function handleShareOrCopy() {
     setError(null)
     const result = await shareOrCopy({ text, title: tFlavor('shareTitle') })
-    if (result === 'shared') setMessage(t('exchange.shared'))
-    else if (result === 'copied') setMessage(t('exchange.copied'))
+    if (result === 'shared') setMessage(tFlavor('exchange.shared'))
+    else if (result === 'copied') setMessage(tFlavor('exchange.copied'))
     setTimeout(() => setMessage(null), 2000)
   }
 
@@ -49,20 +49,24 @@ export function TextExportPanel() {
     try {
       parsed = JSON.parse(text)
     } catch {
-      setError(t('exchange.errorInvalidJson'))
+      setError(tFlavor('exchange.errorInvalidJson'))
       return
     }
     const payload = parseExportPayload(parsed)
     if (!payload) {
-      setError(t('exchange.errorMissingData'))
+      setError(tFlavor('exchange.errorMissingData'))
       return
     }
     importPayload(fromExportPayload(payload))
-    setMessage(t('exchange.loaded'))
+    setMessage(tFlavor('exchange.loaded'))
     setTimeout(() => setMessage(null), 2000)
   }
 
-  const shareLabel = capability.canShare ? t('exchange.share') : capability.canCopyText ? t('exchange.copy') : null
+  const shareLabel = capability.canShare
+    ? tFlavor('exchange.share')
+    : capability.canCopyText
+      ? tFlavor('exchange.copy')
+      : null
 
   return (
     <div className={panelStyle}>
@@ -79,14 +83,13 @@ export function TextExportPanel() {
           </Button>
         )}
         <Button variant="primary" onPress={handleLoad}>
-          {t('exchange.load')}
+          {tFlavor('exchange.load')}
         </Button>
       </div>
       {message && <p className={noteStyle}>{message}</p>}
       {error && <p className={errorStyle}>{error}</p>}
       <p className={noteStyle}>
-        {t('exchange.textFallbackNote')}
-        {!shareLabel && t('exchange.textFallbackHint')}
+        {tFlavor('exchange.textFallbackNote')} {!shareLabel && tFlavor('exchange.textFallbackHint')}
       </p>
     </div>
   )
