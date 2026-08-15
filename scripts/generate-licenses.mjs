@@ -1,8 +1,18 @@
 // Regenerate src/data/licenses.generated.json from installed production dependencies.
-// Run with: node scripts/generate-licenses.mjs
-// Also acts as a license gate: fails the build if a dependency's license
+// Run with: node scripts/generate-licenses.mjs (or `pnpm run generate:licenses`)
+// after adding/upgrading a dependency, and commit the result.
+//
+// Deliberately NOT wired into the `build` script: `pnpm licenses list` reads
+// license metadata from pnpm's content-addressable store index, and CI
+// providers that restore a cached node_modules (Netlify included) don't
+// always restore those index files, so the command can fail in CI with
+// ERR_PNPM_MISSING_PACKAGE_INDEX_FILE even though the same install works
+// fine locally. Keeping this a manual/dev-time step avoids making the
+// production build depend on that.
+//
+// Also acts as a license gate: fails when run if a dependency's license
 // isn't on the permissive allowlist below, so an unreviewed copyleft
-// dependency (e.g. GPL) can't slip into a production build unnoticed.
+// dependency (e.g. GPL) doesn't slip in unnoticed.
 import { execFileSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
