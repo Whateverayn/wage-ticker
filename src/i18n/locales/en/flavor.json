@@ -87,5 +87,16 @@
     "working": "On shift",
     "overtime": "Overtime"
   },
-  "shareTitle": "Wage Ticker settings"
+  "shareTitle": "Wage Ticker settings",
+  "licenses": {
+    "openButton": "Licenses",
+    "title": "Licenses",
+    "ownIntroPrefix": "This app's own source code is released under the",
+    "ownIntroSuffix": ".",
+    "attributionTitle": "Third-party licenses (attribution required)",
+    "attributionBody": "This app uses the following libraries under the Apache License 2.0. Their copyright notices are listed here as required by that license.",
+    "thanksTitle": "Also built on these libraries",
+    "thanksBody": "This app is built on the following open-source libraries. Thanks to everyone who builds and maintains them.",
+    "close": "Close"
+  }
 }
