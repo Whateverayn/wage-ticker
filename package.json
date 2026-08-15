@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "generate:licenses": "node scripts/generate-licenses.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run"

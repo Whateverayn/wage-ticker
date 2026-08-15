@@ -46,5 +46,16 @@
   "update": {
     "available": "新しいバージョンあるさー",
     "action": "更新する"
+  },
+  "licenses": {
+    "openButton": "ライセンス",
+    "title": "ライセンス",
+    "ownIntroPrefix": "このアプリ自体のソースコードは",
+    "ownIntroSuffix": "のもとで公開してるさー.",
+    "attributionTitle": "サードパーティ ライセンス(表示が必要なやつ)",
+    "attributionBody": "以下のライブラリを Apache License 2.0 のもとで使わせてもらってるさー. 同ライセンスの定めに従って, 著作権表示を載せておくねー.",
+    "thanksTitle": "そのほか, お世話になってるライブラリ",
+    "thanksBody": "このアプリは以下のオープンソースライブラリの上に成り立ってるわけよ. 開発・保守してくれてる皆さんに感謝さー.",
+    "close": "閉じる"
   }
 }

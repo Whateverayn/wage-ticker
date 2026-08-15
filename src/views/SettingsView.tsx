@@ -2,6 +2,7 @@ import { Picker, PickerItem } from '@react-spectrum/s2/Picker'
 import { Switch } from '@react-spectrum/s2/Switch'
 import { style } from '@react-spectrum/s2/style' with { type: 'macro' }
 import { useTranslation } from 'react-i18next'
+import { LicensesDialog } from '../components/settings/LicensesDialog'
 import { LOCALES } from '../i18n/localeRegistry'
 import { isVibrationSupported } from '../hooks/useVibration'
 import { isWakeLockSupported } from '../hooks/useWakeLock'
@@ -58,6 +59,10 @@ export function SettingsView() {
         </div>
       )}
       {!isWakeLockSupported() && !isVibrationSupported() && <p className={noteStyle}>{t('settings.noOptions')}</p>}
+
+      <div>
+        <LicensesDialog />
+      </div>
     </div>
   )
 }
